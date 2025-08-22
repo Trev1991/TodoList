@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Springboard Week 4 — To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="app" aria-labelledby="appTitle">
+        <header class="app__header">
+            <h1 id="appTitle">To-Do List • Week 4</h1>
+            <span class="badge" aria-label="Tech stack">Vanilla JS • LocalStorage</span>
+        </header>
+
+        <!-- Add new todo -->
+        <form id="new-todo" class="new-todo" autocomplete="off">
+            <label for="todo-text" class="sr-only">New task</label>
+            <input id="todo-text" type="text" placeholder="Add a task… (Enter to save)" maxlength="140" />
+            <button class="btn btn--primary" type="submit" disabled>Add</button>
+        </form>
+
+        <!-- Filter + actions toolbar -->
+        <div class="toolbar" role="toolbar" aria-label="List controls">
+            <div class="filters" role="group" aria-label="Filters">
+                <button type="button" data-filter="all" aria-pressed="true" class="chip chip--active">All</button>
+                <button type="button" data-filter="active" aria-pressed="false" class="chip">Active</button>
+                <button type="button" data-filter="done" aria-pressed="false" class="chip">Completed</button>
+            </div>
+            <div class="toolbar__right">
+                <button class="btn btn--ghost" type="button" id="clearCompleted">Clear completed</button>
+            </div>
+        </div>
+
+        <!-- Todo list -->
+        <ul id="list" class="list" role="list" aria-live="polite" aria-label="To-dos"></ul>
+
+        <footer class="app__footer">
+            <span id="count" class="count">0 items</span>
+            <span class="muted">Tip: Double-click a task to edit</span>
+        </footer>
+
+        <!-- Live region for a11y announcements -->
+        <div class="sr-only" aria-live="polite" aria-atomic="true" id="live"></div>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
